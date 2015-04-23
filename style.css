@@ -6,6 +6,9 @@ html{
   background-size: cover;
   -webkit-user-select:all;
 }
+body{
+	margin:0;
+}
 
 #background{
 	width: cover;
@@ -22,11 +25,15 @@ h1{
 }
 
 #grass{
-	position: absolute;
-	bottom: 0;
+	position: relative;
 	width: 100%;
-	left:-0.02em;
-	
+	bottom: 3em;
+	z-index: 4;
+}
+#grassdiv{
+	position: fixed;
+	bottom: -4em;
+	z-index: 2;
 }
 
 #spaceship{
@@ -77,9 +84,9 @@ input{
 textarea{
     border: 2px solid black;
     border-radius:5px;
-    font-family: 'Helvetica', Arial;
+    font-family: 'Avenir', Arial;
     background-color: transparent;
- 	margin: 0 auto;
+ 	  margin: 0 auto;
     width: 40%;
     outline:none;
     font-size: 1em;
@@ -124,131 +131,243 @@ input[type = "submit"]{
     color: #220301;
     font-family: 'Helvetica', Arial;
     font-weight: 100;
+    position: relative;
+    z-index: 100000;
 }
 input:focus[type = "submit"]{
     background-color: rgba(0,0,0,0.5);
     outline: none;
 }
 
-/*form{
-	position: absolute;
-	margin-left:42%;
-	margin-right: 42%
-} */
+/* media queries to make the site vertically repsonsive */
+
+@media only screen and (max-height: 550px){
+  	h1{
+	font-size: 2em;
+	margin-top: 0em;
+	}
+	#bone{
+		bottom:-15em;
+		left:80%;
+
+	}
+	#btwo{
+		bottom:15em;
+    left: 10em;
+	}
+	#cloud2{
+		width: 25%;
+	}
+	#textfield{
+ 	font-size: 0.9em;
+ 	height:2em;
+ 	display:inline;
+    }
+	#email{
+	 	height:2em;
+	}
+}
 
 /* ----------- iPhone 4 and 4S ----------- */
 
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
-  	h1{
-	font-family: 'helvetica';
-	font-weight: 300;
-	text-align: center;
-	position: relative;
-	top: 4em;
-	font-size: 5rem;
-	color:#220301;
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation:portrait){
+  h1{
+	font-size: 2em;
+	margin-top: 1em;
 	}
-	#input{
-	text-align: center;
-	position: relative;
-	top: 20em;
+	#bone{
+		bottom:0em;
+		left:80%;
+	}
+	#btwo{
+		bottom:15em;
+	}
+	input[type = "submit"]{
+		font-size:0.9em;
+		padding: 0.5em;
 	}
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
-
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
+ h1{
+ 	font-size: 2em;
+ }
+ #textfield{
+ 	font-size: 0.9em;
+ 	height:2em;
+ 	display:inline;
+ }
+ #email{
+ 	height:2em;
+ }
+ #bone{
+	top: 11em;
+ }
+ #cloud3{
+ 	bottom: 12em;
+ }
 }
 
 /* ----------- iPhone 5 and 5S ----------- */
 
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-}
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait){
+  h1{
+  font-size: 2em;
+  margin-top: 1em;
+  }
+  #bone{
+    bottom:0em;
+    left:80%;
+  }
+  #btwo{
+    bottom:15em;
+  }
+  input[type = "submit"]{
+    font-size:0.9em;
+    padding: 0.5em;
+  }
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+h1{
+  font-size: 2em;
+ }
+ #textfield{
+  font-size: 0.9em;
+  height:2em;
+  display:inline;
+ }
+ #email{
+  height:2em;
+ }
+ #bone{
+  top: 11em;
+ }
+ #cloud3{
+  bottom: 12em;
+ }
 
 }
 
 /* ----------- iPhone 6 ----------- */
 
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
-
-}
-
 /* Portrait */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) { 
-
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) { 
+  h1{
+  font-size: 2.4em;
+  margin-top: 3.4em;
+  }
+  #bone{
+    bottom:0em;
+    left:80%;
+  }
+  #btwo{
+    bottom:22em;
+    left: 5em;
+  }
+  input[type = "submit"]{
+    font-size:1.2em;
+    padding: 0.5em 0.9em;
+  }
+  #cloud1{
+    top: 4em;
+  }
+  #cloud2{
+    top:2.5em;
+  }
+  #cloud3{
+    bottom: 23em;
+  }
+  #embark{
+    top:;
+  }
+  textarea{
+    width: 70%;
+  }
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) { 
-
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) { 
+h1{
+  font-size: 2em;
+ }
+ #textfield{
+  font-size: 0.9em;
+  height:2em;
+  display:inline;
+ }
+ #email{
+  height:2em;
+ }
+ #bone{
+  top: 11em;
+ }
+ #cloud3{
+  bottom: 12em;
+ }
 }
 
 /* ----------- iPhone 6+ ----------- */
 
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-
-}
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) { 
-
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) { 
+  h1{
+  font-size: 2.4em;
+  margin-top: 3.4em;
+  }
+  #bone{
+    bottom:0em;
+    left:80%;
+  }
+  #btwo{
+    bottom:22em;
+    left: 5em;
+  }
+  input[type = "submit"]{
+    font-size:1.2em;
+    padding: 0.5em 0.9em;
+  }
+  #cloud1{
+    top: 4em;
+  }
+  #cloud2{
+    top:2.5em;
+  }
+  #cloud3{
+    bottom: 23em;
+  }
+  #embark{
+    top:;
+  }
+  textarea{
+    width: 70%;
+  }
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) { 
-
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) { 
+h1{
+  font-size: 2em;
+ }
+ #textfield{
+  font-size: 0.9em;
+  height:2em;
+  display:inline;
+ }
+ #email{
+  height:2em;
+ }
+ #bone{
+  top: 11em;
+ }
+ #cloud3{
+  bottom: 14em;
+ }
 }
